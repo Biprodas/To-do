@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To-do List</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>My To Do List</h1>
+            </div>
+        </header>
+
+        <section>
+            <div class="container">
+                <input type="text" id="add_new" placeholder="Add new task..">
+                <button id="btn_add">Add</button>
+                <button id="btn_clear">Clear All</button>
+            </div>
+        </section>
+        <section class="showcase">
+            <div>
+                <div class="tab">
+                    <button class="tablinks" onclick="todoList(event, 'all')">All</button>
+                    <button class="tablinks active" onclick="todoList(event, 'todo')">To-do</button>
+                    <button class="tablinks" onclick="todoList(event, 'completed')">Completed</button>
+                </div>
+
+                <div id="all" class="tabcontent">
+                    <h3>All task</h3>
+                    <p>All of my task..</p>
+                </div>
+
+                <div id="todo" class="tabcontent">
+                    <h3>To do</h3>
+                    <p>All of my undone task.</p>
+                </div>
+
+                <div id="completed" class="tabcontent">
+                    <h3>Completed</h3>
+                    <p>All of my completed task.</p>
+                </div>
+            </div>
+<script>
+function todoList(evt, listType) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(listType).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+        </section>
+
+        <footer>
+            <p>&copy 2017 Biprodas Roy. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
