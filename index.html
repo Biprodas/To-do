@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>To-do List</title>
         <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="./script/tab.js"></script>
     </head>
     <body>
         <header>
@@ -43,25 +44,10 @@
                     <p>All of my completed task.</p>
                 </div>
             </div>
-<script>
-function todoList(evt, listType) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(listType).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-</script>
         </section>
 
         <footer>
-            <p>&copy 2017 Biprodas Roy. All rights reserved.</p>
+            <p>Biprodas Roy &copy 2017. All rights reserved.</p>
         </footer>
     </body>
 </html>
